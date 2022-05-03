@@ -38,10 +38,10 @@ Class Asclepios extends CI_Controller
 
         if ( $data['asclepio'] != false) {
             $data['nav'] = 'asclepio';
-            $this->load->view('pages/Asclepios/add', $data);
+            $this->load->view('pages/asclepios/add', $data);
         }
         else{
-            redirect(base_url().'Asclepios/add');
+            redirect(base_url().'asclepios/add');
         }
     }
 
