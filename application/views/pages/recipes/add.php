@@ -9,7 +9,7 @@
 <!-- ============================================================== -->
 <!-- 						Content Start	 						-->
 <!-- ============================================================== -->
-<div class="row page-header">
+<div class="page-header">
         <div class="row">
             <div class="col-lg-6 col-md-12 align-self-center ">
             <h2>Recetario</h2>

@@ -57,8 +57,16 @@
                     <a class="nav-link"  href="javascript: void(0);" aria-expanded="false"><i class="fas fa-file"></i> <span class="toggle-none">Recetarios <span class="fa arrow"></span></span></a>
                     <ul class="nav-second-level nav flex-column <?php echo ($nav == 'recipe') ? 'collapse in' : '' ?>" aria-expanded="false">
                         <li class="nav-item"><a class="nav-link" href="<?php echo recipe_list_link(true) ?>">Ver ultimos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?php echo recipe_list_link() ?>">Ver todas</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?php echo recipe_add_link() ?>">Agregar nueva</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo recipe_list_link() ?>">Ver todos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo recipe_add_link() ?>">Agregar nuevo</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item <?php echo ($nav == 'asclepio') ? 'active' : '' ?>">
+                    <a class="nav-link"  href="javascript: void(0);" aria-expanded="false"><i class="fas fa-file"></i> <span class="toggle-none">Asclepios <span class="fa arrow"></span></span></a>
+                    <ul class="nav-second-level nav flex-column <?php echo ($nav == 'recipe') ? 'collapse in' : '' ?>" aria-expanded="false">
+                        <li class="nav-item"><a class="nav-link" href="<?php echo asclepio_list_link() ?>">Ver todos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?php echo asclepio_add_link() ?>">Agregar nuevo</a></li>
                     </ul>
                 </li>
             </ul>

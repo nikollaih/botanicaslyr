@@ -3,6 +3,7 @@ $this->load->view('templates/header.php');
 $this->load->view('templates/top-bar.php');
 $this->load->view('templates/right-bar.php');
 $this->load->view('templates/navigation.php');
+$this->load->view('modals/asclepios');
 $date_format = "d M, Y";
 $time_format = "H:i a";
 ?>
@@ -285,6 +286,7 @@ $time_format = "H:i a";
                                         </div>
                                         <div class="form-group text-right">
                                             <hr>
+                                            <a data-toggle="modal" data-target="#asclepios-modal" class="btn btn-success btn-icon" onclick="setAsclepioId('detalles-recetario')"><i class="fa fa-list"></i> Insertar asclepio</a>
                                             <button class="btn btn-primary btn-icon"><i class="fa fa-save"></i> Actualizar</button>
                                         </div>
                                     </div>
@@ -308,7 +310,7 @@ $time_format = "H:i a";
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <em class="text-muted">En el siguiente espacio incluya la información que considere pertienente recordar:</em>
-                                            <textarea name="observaciones" class="summernote"><?php
+                                            <textarea id="observaciones" name="observaciones" class="summernote"><?php
                                                     if (isset($ap['observaciones'])) {
                                                         echo $ap['observaciones'];
                                                     }
@@ -320,6 +322,7 @@ $time_format = "H:i a";
                                     <div class="col-md-12">
                                         <div class="form-group text-right">
                                             <hr>
+                                            <a data-toggle="modal" data-target="#asclepios-modal" class="btn btn-success btn-icon" onclick="setAsclepioId('observaciones')"><i class="fa fa-list"></i> Insertar asclepio</a>
                                             <button class="btn btn-primary btn-icon"><i class="fa fa-save"></i> Actualizar</button>
                                         </div>
                                     </div>

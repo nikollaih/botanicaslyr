@@ -102,6 +102,12 @@
 		}
 	}
 
+	function get_asclepios(){
+		$CI = & get_instance();  //get instance, access the CI superobject
+        $CI->load->model("Mdl_Asclepio");
+		return $CI->Mdl_Asclepio->all();
+	}
+
 	function invoiceNumber($n)
 	{
 		switch (strlen($n)) {
