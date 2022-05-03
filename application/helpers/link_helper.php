@@ -152,6 +152,25 @@ function recipe_file_link($id){
 	return base_url().'Files/recipeOut/'.$id.'/'.generateToken(10);
 }
 
+// ASCLEPIOS ROUTES
+function asclepio_list_link($limit = false){
+    if($limit != false){
+        return base_url().'Asclepios/index/true';
+    }
+    else{
+        return base_url().'Asclepios';
+    }
+}
+
+function asclepio_add_link(){
+	return base_url().'Asclepios/add';
+}
+
+function asclepio_update_link($id){
+	return base_url().'Asclepios/update/'.$id;
+}
+
+
 // TODO EVOLUTION
 function evolution_link($id){
 	return base_url().'Files/evolution/'.$id.'/'.generateToken(10);

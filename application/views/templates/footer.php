@@ -37,6 +37,7 @@
     <script src="<?php echo base_url() ?>assets/js/products.js"></script>
     <script src="<?php echo base_url() ?>assets/js/invoices.js"></script>
     <script src="<?php echo base_url() ?>assets/js/recipes.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/asclepios.js"></script>
     <!-- Formatter form mask-->
 	<script src="<?php echo base_url() ?>assets/lib/formatter/jquery.formatter.min.js"></script>
 
