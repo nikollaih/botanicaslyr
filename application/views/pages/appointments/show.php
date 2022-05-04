@@ -248,7 +248,7 @@ $time_format = "H:i a";
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label><strong>Recomendaciones del recetario:</strong></lab<el><br>
+                                            <label><strong>Recomendaciones del recetario:</strong></label><br>
                                             <em class="text-muted">A continuación escriba cada una de las recomendaciones necesarias para el consumo de los productos recetados.</em>
                                             <textarea id="detalles-recetario" name="detalles_recetario" class="summernote"><?php
                                                 if (isset($ap['detalles_recetario'])) {

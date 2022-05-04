@@ -62,7 +62,7 @@ function addAsclepioToSummernote(id_asclepio) {
         type: 'GET',
         success: function(data) {
             var data = JSON.parse(data);
-            console.log(data);
+            console.log(data.obj.descripcion_asclepio);
             if (data.status) {
                 $('#' + asclepioId).summernote('pasteHTML', data.obj.descripcion_asclepio);
             } else {

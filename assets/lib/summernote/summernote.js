@@ -2906,9 +2906,9 @@
 
                 var rng = this.wrapBodyInlineWithPara().deleteContents();
 
-                return childNodes.reverse().map(function(childNode) {
+                return childNodes.map(function(childNode) {
                     return rng.insertNode(childNode);
-                }).reverse();
+                });
             };
 
             /**
