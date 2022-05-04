@@ -338,10 +338,6 @@ $time_format = "H:i a";
 $this->load->view('templates/footer.php');
 ?>
 
-<style>
-    .note-editable { font-size: 18px; }
-</style>
-
 <script>
  var id_consulta = '<?php echo $ap['id_consulta']; ?>';   
 </script>
