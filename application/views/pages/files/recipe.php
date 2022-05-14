@@ -20,7 +20,8 @@
             font-family: 'Courier';
             font-style: normal;
             font-weight: 700;
-            src: url('../../../libraries/dompdf/fonts/Courier.ttf') format('truetype');
+            src: url('../../../libraries/dompdf/fonts/Courier.ttf') format('truetype'),
+            url('../../../../libraries/dompdf/fonts/Courier.ttf') format('truetype');
             }
 
         *{
