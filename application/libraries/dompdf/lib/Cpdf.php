@@ -464,28 +464,28 @@ class Cpdf
                         // Named with limited valid values
                         case 'NonFullScreenPageMode':
                             if (!in_array($v, array('UseNone', 'UseOutlines', 'UseThumbs', 'UseOC'))) {
-                                continue 2;
+                                continue;
                             }
                             $o['info'][$k] = $v;
                             break;
 
                         case 'Direction':
                             if (!in_array($v, array('L2R', 'R2L'))) {
-                                continue 2;
+                                continue;
                             }
                             $o['info'][$k] = $v;
                             break;
 
                         case 'PrintScaling':
                             if (!in_array($v, array('None', 'AppDefault'))) {
-                                continue 2;
+                                continue;
                             }
                             $o['info'][$k] = $v;
                             break;
 
                         case 'Duplex':
                             if (!in_array($v, array('None', 'AppDefault'))) {
-                                continue 2;
+                                continue;
                             }
                             $o['info'][$k] = $v;
                             break;
@@ -1999,7 +1999,7 @@ EOT;
 
                 foreach ($o["info"] as $k => $v) {
                     if (!in_array($k, $valid_params)) {
-                        continue;
+                        break;
                     }
                     $res .= "/$k $v\n";
                 }
@@ -2522,7 +2522,7 @@ EOT;
                             foreach ($bits as $bit) {
                                 $bits2 = explode(' ', trim($bit));
                                 if (mb_strlen($bits2[0], '8bit') == 0) {
-                                    continue;
+                                    break;
                                 }
 
                                 if (count($bits2) > 2) {
@@ -2568,7 +2568,7 @@ EOT;
                             foreach ($bits as $bit) {
                                 $bits2 = explode(' ', trim($bit));
                                 if (mb_strlen($bits2[0], '8bit') === 0) {
-                                    continue;
+                                    break;
                                 }
 
                                 if (count($bits2) > 2) {
@@ -3876,13 +3876,9 @@ EOT;
      */
     function stream($filename = "document.pdf", $options = array())
     {
-        $output = ob_get_clean();
-        if ( headers_sent()) {
-            echo $output;
+        if (headers_sent()) {
+            die("Unable to stream pdf: headers already sent");
         }
-//        if (headers_sent()) {
-//            die("Unable to stream pdf: headers already sent");
-//        }
 
         if (!isset($options["compress"])) $options["compress"] = true;
         if (!isset($options["Attachment"])) $options["Attachment"] = true;
@@ -4855,7 +4851,7 @@ EOT;
             $imgplain = imagecreatefrompng($tempfile_plain);
         }
         // Use PECL imagick + ImageMagic to process transparent PNG images
-        elseif (extension_loaded("imagick")) {
+        elseif (extension_loaded("imagick") && FALSE) {
             // Native cloning was added to pecl-imagick in svn commit 263814
             // the first version containing it was 3.0.1RC1
             static $imagickClonable = null;

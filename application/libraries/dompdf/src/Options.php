@@ -129,7 +129,7 @@ class Options
      *
      * @var int
      */
-    private $dpi = 150;
+    private $dpi = 96;
 
     /**
      * A ratio applied to the fonts height to be more like browsers' line height
@@ -157,7 +157,7 @@ class Options
      *
      * @var bool
      */
-    private $isPhpEnabled = true;
+    private $isPhpEnabled = false;
 
     /**
      * Enable remote file access
@@ -179,7 +179,7 @@ class Options
      *
      * @var bool
      */
-    private $isRemoteEnabled = true;
+    private $isRemoteEnabled = false;
 
     /**
      * Enable inline Javascript

@@ -59,10 +59,10 @@ html, body{
         <tbody>
             <tr>
                 <td class="text-center">
-                    <img width="300px" src="<?php base_url() ?>assets/img/logo.jpeg">
+                    <img width="190px" src="<?php base_url() ?>assets/img/logo.jpeg">
                 </td>
                 <td class="">
-                    <h3 style="margin: 4px; color: #1E88E5; font-size:40px;">Dr. Yeiner H. Alzate I.</h3>
+                    <h3 style="margin: 4px; color: #1E88E5; font-size:24px;">Dr. Yeiner H. Alzate I.</h3>
                     <p style="margin: 4px;">Geront&oacute;logo U. Quindio ReTHUS 4265.</p>
                     <p style="margin: 4px;">Esp. M&eacute;todos Biol&oacute;gicos - Naturistas UNINI Reg CEC 14-1365.</p>
                     <p style="margin: 4px;">Master Md Biol&oacute;gica U.E.M.C. Reg 1669 FUI.</p>
@@ -76,13 +76,13 @@ html, body{
 
     <div style="position: relative;z-index:9;">
         <hr style="margin: 20px 0;">
-        <p style="margin: 3px 0;font-size:30px;"><strong>Fecha: <?php echo date('Y-m-d') ?></strong></p>
-        <p style="margin: 3px 0 0px 0;font-size:30px;"><strong>Nombre: <?php echo strtoupper($ap['nombre_persona']. ' ' .$ap['apellidos_persona']) ?></strong></p>
+        <p style="margin: 3px 0;font-size:20px;"><strong>Fecha: <?php echo date('Y-m-d') ?></strong></p>
+        <p style="margin: 3px 0 0px 0;font-size:20px;"><strong>Nombre: <?php echo strtoupper($ap['nombre_persona']. ' ' .$ap['apellidos_persona']) ?></strong></p>
     </div>
 
-    <h3 style="margin-top: 0px; font-size:33px;">Rx:</h3>
-    <div style="margin-top: 0;position: relative;z-index:9;font-size:36px !important;font-weight:bold !important;">
+    <h3 style="margin-top: 0px; font-size:23px;">Rx:</h3>
+    <div style="margin-top: 0;position: relative;z-index:9;font-size:24px !important;font-weight:bold !important;">
         <?php echo $ap['detalles_recetario']; ?>
     </div>
-    <img style="position: absolute; width: 1000px;opacity: 0.5;left:80px; top: 340px;z-index:1;" src="<?php base_url() ?>assets/img/medicina.jpg">
+    <img style="position: absolute; width: 550px;opacity: 0.5;left:80px; top: 300px;z-index:1;" src="<?php base_url() ?>assets/img/medicina.jpg">
    </body></html>
