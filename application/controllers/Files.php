@@ -78,7 +78,9 @@ Class Files extends CI_Controller
 		$this->load->view('pages/files/recipe', $data);
 
 		$html = $this->output->get_output();
-
+		print_r($html);
+die();
+ 
 		//$this->dompdf->set_option('defaultFont', 'Helvetica');
 		$this->dompdf->set_option('isRemoteEnabled', TRUE);
 
