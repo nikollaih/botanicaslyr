@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @package dompdf
  * @link    http://dompdf.github.com/
@@ -25,19 +24,16 @@ spl_autoload_register(function($class)
     return false;
 });
 
-
-
 // php-font-lib
 require_once __DIR__ . '/lib/php-font-lib/src/FontLib/Autoloader.php';
+
 //php-svg-lib
 require_once __DIR__ . '/lib/php-svg-lib/src/autoload.php';
+
 
 /*
  * New PHP 5.3.0 namespaced autoloader
  */
 require_once __DIR__ . '/src/Autoloader.php';
-require_once __DIR__ . '/src/Dompdf.php';
 
 Dompdf\Autoloader::register();
-use Dompdf\Dompdf;
-

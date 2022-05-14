@@ -70,14 +70,14 @@ margin:3px 10px;
 
     <div style="position: relative;z-index:9;">
         <hr style="margin: 10px 0;">
-        <p style="margin: 3px 0;font-size:20px;"><strong>Fecha: <?php echo $recipe['fecha_recetario'] ?></strong></p>
-        <p style="margin: 3px 0 0px 0;font-size:20px;"><strong>Nombre: <?php echo strtoupper($recipe['paciente_recetario']) ?></strong></p>
+        <p style="margin: 3px 0;font-size:36px;"><strong>Fecha: <?php echo $recipe['fecha_recetario'] ?></strong></p>
+        <p style="margin: 3px 0 0px 0;font-size:36px;"><strong>Nombre: <?php echo strtoupper($recipe['paciente_recetario']) ?></strong></p>
     </div>
 
-    <h3 style="margin-top: 0px; font-size:24px;">Rx:</h3>
-    <div style="margin-top: 0; position: relative;z-index:9;">
+    <h3 style="margin-top: 0px; font-size:38px;">Rx:</h3>
+    <div style="margin-top: 0; position: relative;z-index:9;font-size:40px !important;font-weight:bold !important;">
         <?php echo $recipe['texto_recetario']; ?>
     </div>
-    <img style="position: absolute; width: 600px;opacity: 0.5;left:100px; top: 260px;z-index:1;" src="<?php base_url() ?>assets/img/medicina.jpeg">
+    <img style="position: absolute; width: 600px;opacity: 0.5;left:100px; top: 300px;z-index:1;" src="<?php base_url() ?>assets/img/medicina.jpg">
    </body>
 </html>

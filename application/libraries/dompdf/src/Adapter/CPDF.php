@@ -1108,9 +1108,9 @@ class CPDF implements Canvas
      */
     public function stream($filename = "document.pdf", $options = array())
     {
-        if (headers_sent()) {
-            die("Unable to stream pdf: headers already sent");
-        }
+//        if (headers_sent()) {
+//            die("Unable to stream pdf: headers already sent");
+//        }
 
         if (!isset($options["compress"])) $options["compress"] = true;
         if (!isset($options["Attachment"])) $options["Attachment"] = true;

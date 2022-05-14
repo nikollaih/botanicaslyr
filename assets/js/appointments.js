@@ -18,8 +18,8 @@ jQuery(document).ready(function() {
     });
 
     $('.note-editable').css('font-size', '24px');
-    /*$('.note-editable').css('font-weight', 'bold');
-    $('.note-editable').css('text-align', 'justify');*/
+    $('.note-editable').css('font-weight', 'bold');
+    /*$('.note-editable').css('text-align', 'justify');*/
 })
 
 jQuery(document).on('click', '.btn-asign-app', function() {

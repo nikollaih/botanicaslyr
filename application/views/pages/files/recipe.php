@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><meta http-equiv="Content-Type" content="text/html; charset=big5">
-    
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="content-language" content="es" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -47,8 +46,7 @@ html, body{
             margin-top: 30px;
         }
     </style>
-</head>
-<body>
+</head><body>
 <table  width="100%">
         <tbody>
             <tr>
@@ -70,14 +68,13 @@ html, body{
 
     <div style="position: relative;z-index:9;">
         <hr style="margin: 10px 0;">
-        <p style="margin: 3px 0;font-size:20px;"><strong>Fecha: <?php echo date('Y-m-d') ?></strong></p>
-        <p style="margin: 3px 0 0px 0;font-size:20px;"><strong>Nombre: <?php echo strtoupper($ap['nombre_persona']. ' ' .$ap['apellidos_persona']) ?></strong></p>
+        <p style="margin: 3px 0;font-size:36px;"><strong>Fecha: <?php echo date('Y-m-d') ?></strong></p>
+        <p style="margin: 3px 0 0px 0;font-size:36px;"><strong>Nombre: <?php echo strtoupper($ap['nombre_persona']. ' ' .$ap['apellidos_persona']) ?></strong></p>
     </div>
 
-    <h3 style="margin-top: 0px; font-size:24px;">Rx:</h3>
-    <div style="margin-top: 0;position: relative;z-index:9;">
+    <h3 style="margin-top: 0px; font-size:38px;">Rx:</h3>
+    <div style="margin-top: 0;position: relative;z-index:9;font-size:40px !important;font-weight:bold !important;">
         <?php echo $ap['detalles_recetario']; ?>
     </div>
-    <img style="position: absolute; width: 1200px;opacity: 0.5;left:-200px; top: 200px;z-index:1;" src="<?php base_url() ?>assets/img/medicina.png">
-   </body>
-</html>
+    <img style="position: absolute; width: 1000px;opacity: 0.5;left:80px; top: 300px;z-index:1;" src="<?php base_url() ?>assets/img/medicina.jpg">
+   </body></html>
