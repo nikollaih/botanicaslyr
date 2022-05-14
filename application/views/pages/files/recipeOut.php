@@ -17,6 +17,13 @@
 
         }
 
+        @font-face {
+            font-family: 'Courier';
+            font-style: normal;
+            font-weight: 700;
+            src: url('../../../libraries/dompdf/fonts/Courier.ttf') format('truetype');
+            }
+
         *{
             font-family: 'Courier';
         }

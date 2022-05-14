@@ -79,7 +79,6 @@ Class Files extends CI_Controller
 
 		$html = $this->output->get_output();
 
- 
 		//$this->dompdf->set_option('defaultFont', 'Helvetica');
 		$this->dompdf->set_option('isRemoteEnabled', TRUE);
 
