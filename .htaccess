@@ -1,27 +1,21 @@
-<ifmodule mod_expires.c>
- ExpiresActive On
- ExpiresDefault A3600
- <filesmatch ".(jpg|JPG|gif|GIF|png|css|ico|js)$">
-  ExpiresDefault "access plus 7 day"
- </filesmatch>
-</ifmodule>
+RewriteEngine On
+RewriteBase /
 
+#Removes access to the system folder by users.
+#Additionally this will allow you to create a System.php controller,
+#previously this would not have been possible.
+#'system' can be replaced if you have renamed your system folder.
+RewriteCond %{REQUEST_URI} ^system.*
+RewriteRule ^(.*)$ /index.php/$1 [L]
 
-AddType font/ttf .ttf
-AddType font/eot .eot
-AddType font/otf .otf
-AddType font/woff .woff
-
-<FilesMatch "\.(ttf|otf|eot|woff)$">
-    <IfModule mod_headers.c>
-        Header set Access-Control-Allow-Origin "*"
-    </IfModule>
-</FilesMatch>
-
-
-RewriteEngine on
-
+#Checks to see if the user is attempting to access a valid file,
+#such as an image or css document, if this isn't true it sends the
+#request to index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+#This last condition enables access to the images and css folders, and the robots.txt file
+#Submitted by Michael Radlmaier (mradlmaier)
 
-RewriteRule ^(.*)$ index.php?ruta=$1 [L,QSA]
+
+RewriteCond $1 !^(index\.php|robots\.txt|botanicaslyr|assets)
+RewriteRule ^(.*)$ index.php/$1 [L]
