@@ -81,7 +81,7 @@ html, body{
     </div>
 
     <h3 style="margin-top: 0px; font-size:23px;">Rx:</h3>
-    <div style="margin-top: 0;position: relative;z-index:9;font-size:24px !important;font-weight:bold !important;">
+    <div style="margin-top: 0;position: relative;z-index:9;font-weight:bold !important;">
         <?php echo $ap['detalles_recetario']; ?>
     </div>
     <img style="position: absolute; width: 550px;opacity: 0.5;left:80px; top: 300px;z-index:1;" src="<?php base_url() ?>assets/img/medicina.jpg">
