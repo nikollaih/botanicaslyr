@@ -17,7 +17,11 @@ jQuery(document).ready(function() {
         ],
     });
 
-    $('.note-editable').css('font-size', '24px');
+    jQuery('.summernote.hc').summernote('fontSize', 24);
+    jQuery('.summernote.rc').summernote('fontSize', 24);
+    jQuery('.summernote.he').summernote('fontSize', 24);
+
+    /*$('.note-editable').css('font-size', '24px');*/
     $('.note-editable').css('font-weight', 'bold');
     /*$('.note-editable').css('text-align', 'justify');*/
 })

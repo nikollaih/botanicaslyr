@@ -143,12 +143,12 @@ $time_format = "H:i a";
                                 </div>
                                 <hr class="margin-b-0">
                             </div>
-                            <div class="card-body" style="display: none;">
+                            <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <em class="text-muted">En el siguiente espacio incluya la información de la nueva actualización de la historia clínica:</em>
-                                            <textarea name="detalles_historia_clinica" class="summernote"><?php
+                                            <textarea name="detalles_historia_clinica" class="summernote hc"><?php
                                                     if (isset($h['detalles_historia_clinica'])) {
                                                         echo $h['detalles_historia_clinica'];
                                                     }
@@ -209,7 +209,7 @@ $time_format = "H:i a";
                                 </div>
                                 <hr class="margin-b-0">
                             </div>
-                            <div class="card-body" style="display: none;">
+                            <div class="card-body">
                                 <!-- <div class="row">
                                     <div class="col-md-12">
                                         <hr>
@@ -250,7 +250,7 @@ $time_format = "H:i a";
                                         <div class="form-group">
                                             <label><strong>Recomendaciones del recetario:</strong></label><br>
                                             <em class="text-muted">A continuación escriba cada una de las recomendaciones necesarias para el consumo de los productos recetados.</em>
-                                            <textarea id="detalles-recetario" name="detalles_recetario" class="summernote"><?php
+                                            <textarea id="detalles-recetario" name="detalles_recetario" class="summernote rc"><?php
                                                 if (isset($ap['detalles_recetario'])) {
                                                     echo $ap['detalles_recetario'];
                                                 }
@@ -305,12 +305,12 @@ $time_format = "H:i a";
                                 </div>
                                 <hr class="margin-b-0">
                             </div>
-                            <div class="card-body" style="display: none;"> 
+                            <div class="card-body"> 
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <em class="text-muted">En el siguiente espacio incluya la información que considere pertienente recordar:</em>
-                                            <textarea id="observaciones" name="observaciones" class="summernote"><?php
+                                            <textarea id="observaciones" name="observaciones" class="summernote he"><?php
                                                     if (isset($ap['observaciones'])) {
                                                         echo $ap['observaciones'];
                                                     }
