@@ -137,17 +137,3 @@ function generateToken($length){
 		$token = rand(1000,9999);
 		return $token;
 	}
-
-	function getSedeName($sedeId){
-		switch ($sedeId) {
-			case '1':
-				return "Caicedonia";
-				break;
-			case '2':
-				return "Armenia";
-				break;
-			default:
-				# code...
-				break;
-		}
-	}

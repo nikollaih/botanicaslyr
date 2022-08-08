@@ -3,7 +3,17 @@
     <div class="row">
         <div class="col-md-8">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="id_tipo_docuemnto">Categoría *</label>
+                        <select name="p[categoria_producto]" class="form-control required">
+                            product_states_options() -> helpers/dom_helper 
+                            <?php product_categories_options((isset($p['categoria_producto'])) ? $p['categoria_producto'] : '-1'); ?>
+                        </select>
+                        <span class="input-error">Este campo es requerido</span>
+                    </div>
+                </div>
+            <div class="col-md-6">
                     <div class="form-group">
                         <label for="id_tipo_docuemnto">Nombre *</label>
                         <input required="" type="text" name="p[nombre_producto]" class="form-control required" placeholder="Nombre del producto" value="<?php echo (isset($p['nombre_producto'])) ? $p['nombre_producto'] : '' ; ?>">

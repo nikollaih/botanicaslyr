@@ -30,11 +30,30 @@
                     <hr class="margin-b-0">
                 </div>
                 <div class="card-body">
+					<div class="row">
+						<div class="col-md-4 mb-3">
+							<label class="mb-0">Filtrar por categoría:</label>
+							<select class="form-control" id="search-category">
+								<option value="">Todas las categorías</option>
+								<?php
+									if($categories != false){
+										foreach ($categories as $cat) {
+								?>
+											<option value="<?php echo $cat['descripcion_producto_categorias'] ?>"><?php echo $cat['descripcion_producto_categorias'] ?></option>
+								<?php
+										}
+									}
+								?>
+							</select>
+						</div>
+					</div>
+					<hr>
                 	<table id="products-list" class="table responsive">
                 		<thead>
                 			<tr>
 								<td></td>
                 				<td style="width: 180px">Nombre</td>
+                				<td style="width: 150px">Categoria</td>
 								<td style="width: 180px">Ref.</td>
                 				<td>Precio</td>
                 				<td>Stock</td>
@@ -52,6 +71,7 @@
 												<img width="50px" src="<?php echo product_image_src($p['id_producto'], $p['imagen_producto']) ?>" alt="">
 											</td>
 											<td><span id="<?php echo $p['id_producto'] ?>"><?php echo $p['nombre_producto'] ?></span></td>
+											<td><span><?php echo $p['descripcion_producto_categorias'] ?></span></td>
 											<td><?php echo $p['referencia_producto'] ?></td>
 											<td>$<?php echo number_format($p['precio_producto'], 0, ',', '.') ?></td>
 											<td><?php echo $p['stock_producto'] ?></td>

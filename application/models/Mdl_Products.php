@@ -20,6 +20,8 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 	    function all($state = null){
             $this->db->from('productos p');
             $this->db->join('estado_productos ep', 'p.estado_producto = ep.id_estado_productos');
+            $this->db->join('producto_categorias pc', 'pc.id_producto_categorias = p.categoria_producto', 'left outer');
+            $this->db->order_by('pc.descripcion_producto_categorias', 'asc');
             $this->db->order_by('p.nombre_producto', 'asc');
             if ($state != null){
                 $this->db->where_in('p.estado_producto', $state);
