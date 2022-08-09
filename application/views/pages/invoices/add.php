@@ -92,7 +92,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Incluir valor de envío ($10.000)</label>
+                            <label>Incluir valor de envío ($12.000)</label>
                             <select name="envio" class="form-control" id="">
                                 <option value="0">No</option>
                                 <option <?= (isset($invoice["envio"]) && $invoice["envio"] == 1) ? "selected" : "" ?> value="1">Si</option>
