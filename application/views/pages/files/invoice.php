@@ -121,7 +121,7 @@
             <?php
                 $total = 0;
                 $descuento = 0;
-                $envio = ($inv["envio"] == "1") ? 12000 : 0;
+                $envio = ($inv["envio"] == "1") ? 15000 : 0;
                 if ($products != false) {
                     foreach ($products as $p) {
                         $total += ($p['valor_productos_factura'] * $p['cantidad_productos_factura']);
@@ -175,7 +175,7 @@
                         <strong>ENVIO</strong>
                     </td>
                     <td class="text-right">
-                        <strong>$12.000</strong>
+                        <strong>$15.000</strong>
                     </td>
                 </tr>
             <?php
