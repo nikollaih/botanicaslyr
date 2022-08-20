@@ -89,7 +89,7 @@ html, body{
         <h4 style="text-align:center;font-size:20px;">HISTORIA CLÍNICA GERONTOLÓGICA</h4>
         <div class="contenedor-informacion">
             <label><strong>Fecha:</strong> <?= date("Y-m-d") ?></label><br>
-            <label><strong>Hora:</strong> <?= date("H:i a") ?></label><br>
+            <label><strong>Hora:</strong> <?= date("h:i a") ?></label><br>
             <label><strong>Identificación:</strong> <?= $persona["numero_documento"] ?></label><br>
             <label><strong>Nombre del paciente:</strong> <?= $persona["nombre_persona"] . " " . $persona["apellidos_persona"] ?></label><br>
             <label><strong>Edad:</strong> <?= $persona["peso_persona"] ?></label><br>
