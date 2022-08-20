@@ -189,6 +189,7 @@ class Appointments extends CI_Controller {
 		$data['person'] = $this->Mdl_Persons->getPerson($data['ap']['id_persona']);
 		$data['products'] = $this->Mdl_AppointmentProducts->getAppointmentProducts($id);
 		$data['h'] = $this->Mdl_AppointmentHistory->all($id);
+		$data["historia_clinica"] = $this->Mdl_AppointmentHistory->getByPerson($data['person']["id_persona"]);
 
 		if ($data['ap'] == false) {
 			redirect(base_url().'Appointments');
@@ -238,7 +239,28 @@ class Appointments extends CI_Controller {
 	function saveHistory($data, $_FILE){
 		isLogin();
 
-		if ($data) {
+		if($data){
+			unset($data['detalles_recetario']);
+			unset($data['observaciones']);
+			$consulta = $this->Mdl_Appointments->appointmentGetId($data["id_consulta"]);
+			$historiaClinicaData = $data["hc"];
+
+			if($consulta){
+				$historiaClinica = $this->Mdl_AppointmentHistory->getByPerson($consulta["id_persona"]);
+
+				if($historiaClinica){
+					$historiaClinicaData["id_historia_clinica"] = $historiaClinica["id_historia_clinica"];
+					$historiaClinicaData["modified_at"] = date("Y-m-d h:i:s");
+					$this->Mdl_AppointmentHistory->updateHistoriaClinica($historiaClinicaData);
+				}
+				else{
+					$historiaClinicaData["id_persona"] = $consulta["id_persona"];
+					$this->Mdl_AppointmentHistory->addHistoriaClinica($historiaClinicaData);
+				}
+			}
+		}
+
+		/*if ($data) {
 			unset($data['detalles_recetario']);
 			unset($data['observaciones']);
 			$ap = $this->Mdl_AppointmentHistory->all($data['id_consulta']);
@@ -256,7 +278,7 @@ class Appointments extends CI_Controller {
 			else{
 				$ap = $this->Mdl_AppointmentHistory->update($data);
 			}
-		}
+		}*/
 	}
 
 
@@ -264,6 +286,7 @@ class Appointments extends CI_Controller {
 		isLogin();
 		unset($data['files']);
 		unset($data['detalles_historia_clinica']);
+		unset($data['hc']);
 		$this->updateRecipe($data);
 		$appointment = $this->Mdl_Appointments->appointmentUpdate($data);
 		$this->session->set_flashdata('text', 'Consulta modificada exitosamente');

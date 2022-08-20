@@ -52,6 +52,22 @@ class Mdl_AppointmentHistory extends CI_Model{
 		}
 	}
 
+	function getByPerson($id_persona){
+		$this->db->from('historia_clinica');
+        $this->db->where('id_persona', $id_persona);
+		$result = $this->db->get();
+		return ($result->num_rows() > 0) ? $result->row_array() : false;
+	}
+
+	function addHistoriaClinica($data){
+		return $this->db->insert("historia_clinica", $data);
+	}
+
+	function updateHistoriaClinica($data){
+		$this->db->where("id_historia_clinica", $data["id_historia_clinica"]);
+		return $this->db->update("historia_clinica", $data);
+	}
+
 	// ! =================  Syncronization functions ==================
 
 	/**

@@ -65,6 +65,7 @@ $time_format = "H:i a";
                             ?>
                             <a href="<?php echo recipe_book_products_link($ap['id_consulta']) ?>" target="_blank" class="btn box-shadow btn-rounded btn-info btn-icon"><i class="fa fa-list"></i> Imprimir recetario</a>
                             <a href="<?php echo evolution_link($ap['id_consulta']) ?>" target="_blank" class="btn box-shadow btn-rounded btn-success btn-icon"><i class="fa fa-list"></i> Imprimir evolucion</a>
+                            <a href="<?php echo historia_clinica_link($ap['id_persona']) ?>" target="_blank" class="btn box-shadow btn-rounded btn-warning btn-icon"><i class="fa fa-list"></i> Imprimir Historia Clínica</a>
                         </div>
                     </div>
                 </div>
@@ -144,7 +145,7 @@ $time_format = "H:i a";
                                 <hr class="margin-b-0">
                             </div>
                             <div class="card-body">
-                                <div class="row">
+                                <!--<div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <em class="text-muted">En el siguiente espacio incluya la información de la nueva actualización de la historia clínica:</em>
@@ -185,15 +186,9 @@ $time_format = "H:i a";
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group text-right">
-                                            <hr>
-                                            <button class="btn btn-primary btn-icon"><i class="fa fa-save"></i> Actualizar</button>
-                                        </div>
-                                    </div>
-                                </div>
+                                </div>-->
+                                <?php $this->load->view("pages/appointments/_formHistoriaClinica", array("historia_clinica" => $historia_clinica)) ?>
+                                
                             </div>
                         </div>
                     </div>
@@ -287,7 +282,6 @@ $time_format = "H:i a";
                                         <div class="form-group text-right">
                                             <hr>
                                             <a data-toggle="modal" data-target="#asclepios-modal" class="btn btn-success btn-icon" onclick="setAsclepioId('detalles-recetario')"><i class="fa fa-list"></i> Insertar asclepio</a>
-                                            <button class="btn btn-primary btn-icon"><i class="fa fa-save"></i> Actualizar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -323,7 +317,6 @@ $time_format = "H:i a";
                                         <div class="form-group text-right">
                                             <hr>
                                             <a data-toggle="modal" data-target="#asclepios-modal" class="btn btn-success btn-icon" onclick="setAsclepioId('observaciones')"><i class="fa fa-list"></i> Insertar asclepio</a>
-                                            <button class="btn btn-primary btn-icon"><i class="fa fa-save"></i> Actualizar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -331,6 +324,7 @@ $time_format = "H:i a";
                         </div>
                     </div>
                 </div>
+                <button class="btn btn-primary btn-icon float-save-button"><i class="fa fa-save"></i> Actualizar</button>
             </form>
         </div>
     </div>
@@ -339,7 +333,12 @@ $this->load->view('templates/footer.php');
 ?>
 
 <script>
- var id_consulta = '<?php echo $ap['id_consulta']; ?>';   
+ var id_consulta = '<?php echo $ap['id_consulta']; ?>';
+ jQuery(document).ready(function(){
+    $('#alergias').summernote({
+        focus: true
+    })
+ })
 </script>
 <!-- Wysihtml5 and Summernote -->
 <link href="<?php echo base_url() ?>assets/lib/wysihtml5/bootstrap-wysihtml5.css" rel="stylesheet">

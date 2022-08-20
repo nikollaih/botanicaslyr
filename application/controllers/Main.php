@@ -10,6 +10,14 @@ class Main extends CI_Controller {
 		$this->load->model(array('Mdl_Schedules', 'Mdl_Persons', 'Mdl_Appointments'));
 	}
 
+	public function pdf(){
+		$mpdf = new \Mpdf\Mpdf();
+		$html = '<h1>Nikollai</h1>';
+		$mpdf->WriteHTML($html);
+		$mpdf->Output(); // opens in browser
+		//$mpdf->Output('pakainfo.pdf','D'); // it downloads the file into the user system, with give name
+	}
+
 	public function index()
 	{
 		isLogin();

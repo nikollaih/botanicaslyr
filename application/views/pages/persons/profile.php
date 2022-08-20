@@ -27,38 +27,55 @@ $time_format = "H:i a";
 
 <section class="main-content">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-12">
             <div class='widget white-bg friends-group clearfix'>
                 <div class="padding-20 text-center">
                     <p class="lead font-500 margin-b-0"><?php echo $person['nombre_persona'].' '.$person['apellidos_persona'] ?></p>
                     <hr>
                 </div>
+                <div class="row person-container">
+                    <div class="col-md-3 col-sm-12">
+                        <i class="fa fa-credit-card"></i><br>
+                        <label><?php echo $person['descripcion_tipo_documento'] ?></label><br>
+                        <?php echo $person['numero_documento'] ?>
+                    </div>
+
+                    <div class="col-md-3 col-sm-12">
+                        <i class="fa fa-phone"></i><br>
+                        <label for="">Teléfono</label><br>
+                        <?php echo $person['telefono_persona'] ?>
+                    </div>
+
+                    <div class="col-md-3 col-sm-12">
+                        <i class="fa fa-gift"></i><br>
+                        <label for="">Edad</label><br>
+                        <?php echo $person['peso_persona'] ?>
+                    </div>
+
+                    <div class="col-md-3 col-sm-12">
+                        <i class="fa fa-user"></i><br>
+                        <label for="">Acudiente</label><br>
+                        <?php echo $person['acudiente_persona'] ?>
+                    </div>
+                </div>
                 <table class="table browser no-border">
                     <tbody>
-                        <tr>
-                            <td class="text-center"><i class="fa fa-credit-card"></i></td>
-                            <td>Tipo Documento<br><?php echo $person['descripcion_tipo_documento'] ?></td>
-                        </tr>
-                        <tr>
-                            <td class="text-center"><i class="fa fa-credit-card"></i></td>
-                            <td>Número documento<br><?php echo $person['numero_documento'] ?></td>
-                        </tr>
                         <!-- <tr>
                             <td class="text-center"><i class="fa fa-gift"></i></td>
                             <td>Fecha de nacimiento<br><?php echo ($person['fecha_nacimiento_persona']); ?></td>
-                        </tr> -->
+                        </tr> 
                         <tr>
                             <td class="text-center"><i class="fa fa-phone"></i></td>
                             <td>Teléfono<br><?php echo $person['telefono_persona'] ?></td>
                         </tr>
-                        <!-- <tr>
+                         <tr>
                             <td class="text-center"><i class="fa fa-envelope"></i></td>
                             <td>Correo electronico<br><?php echo $person['correo_persona'] ?></td>
                         </tr>
                         <tr>
                             <td class="text-center"><i class="fa fa-map-marker"></i></td>
                             <td>Dirección<br><?php echo $person['direccion_persona'] ?></td>
-                        </tr>-->
+                        </tr>
                         <tr>
                             <td class="text-center"><i class="fa fa-gift"></i></td>
                             <td>Edad<br><?php echo $person['peso_persona']; ?></td>
@@ -67,7 +84,7 @@ $time_format = "H:i a";
                             <td class="text-center"><i class="fa fa-user"></i></td>
                             <td>Acudiente<br><?php echo $person['acudiente_persona']; ?></td>
                         </tr> 
-                        <!-- <tr>
+                         <tr>
                             <td class="text-center"><i class="fa fa-balance-scale"></i></td>
                             <td>Peso<br><?php echo $person['peso_persona']; ?> Kg</td>
                         </tr>
@@ -79,7 +96,54 @@ $time_format = "H:i a";
                 </table>
             </div>
         </div>
-        <div class="col-8">
+
+        <div class="col-md-6 col-sm-12">
+            <div class="card margin-b-0">
+                <div class="card-header card-default">
+                    Historia clínica
+                    <hr class="margin-b-0">
+                </div>
+                <div class="card-body">
+                    <h5>Alergias</h5>
+                    <div class="container-historia-clinica">
+                        <?= $historiaClinica["alergias"] ?>
+                    </div>
+
+                    <h5>Medicamentos que consume</h5>
+                    <div class="container-historia-clinica">
+                        <?= $historiaClinica["medicamentos"] ?>
+                    </div>
+
+
+                    <h5>Motivo de consulta</h5>
+                    <div class="container-historia-clinica">
+                        <?= $historiaClinica["motivo_consulta"] ?>
+                    </div>
+
+                    <h5>signos vitales</h5>
+                    <div class="container-historia-clinica">
+                        <label style="margin-bottom:0;"> <strong>Saturación: </strong> <?= $historiaClinica["saturacion"] ?></label><br>
+                        <label style="margin-bottom:0;"> <strong>Frecuencia Cardiaca: </strong> <?= $historiaClinica["frecuencia_cardiaca"] ?></label><br>
+                        <label style="margin-bottom:0;"> <strong>Frecuencia Respiratoria: </strong> <?= $historiaClinica["frecuencia_respiratoria"] ?></label><br>
+                        <label style="margin-bottom:0;"> <strong>Tensión Arterial: </strong> <?= $historiaClinica["tension_arterial"] ?></label><br>
+                        <label style="margin-bottom:0;"> <strong>Temperatura: </strong> <?= $historiaClinica["temperatura"] ?></label><br>
+                        <label style="margin-bottom:0;"> <strong>Dolor EVA: </strong> <?= $historiaClinica["dolor_eva"] ?></label><br>
+                    </div>
+
+                    <h5>I.D.D.</h5>
+                    <div class="container-historia-clinica">
+                        <?= $historiaClinica["idd"] ?>
+                    </div>
+
+                    <h5>Análisis, plan de manejo y recomendaciones generales</h5>
+                    <div class="container-historia-clinica">
+                        <?= $historiaClinica["analisis_manejo_recomendaciones"] ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-sm-12">
             <div class="card margin-b-0">
                 <div class="card-header card-default">
                     Consultas del paciente
@@ -122,7 +186,7 @@ $time_format = "H:i a";
                                                     else{
                                                 ?>
                                                         <a href="<?php echo invoice_add_link($a['id_persona'], $a['id_consulta']) ?>">
-                                                            <button style="width:40px;margin-top:5px" type="button" class="btn btn-sm btn-danger"><i class="fa fa-dollar"></i></button>
+                                                            <button style="width:40px;" type="button" class="btn btn-sm btn-danger"><i class="fa fa-dollar"></i></button>
                                                         </a>
                                                 <?php
                                                     }
