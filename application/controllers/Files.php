@@ -6,11 +6,28 @@ Class Files extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->library('pdf');
-		$this->load->model(array('Mdl_Appointments','Mdl_AppointmentProducts', 'Mdl_Invoices', 'Mdl_Recipes'));
+		$this->load->model(array('Mdl_Persons', 'Mdl_Appointments','Mdl_AppointmentProducts', 'Mdl_Invoices', 'Mdl_Recipes', 'Mdl_AppointmentHistory'));
+		
+		$fontsFolder = ($_SERVER['HTTP_HOST'] == 'localhost:8888' || $_SERVER['HTTP_HOST'] == 'localhost') ? $_SERVER['DOCUMENT_ROOT'] . '/botanicaslyr/assets/fonts' : $_SERVER['DOCUMENT_ROOT'] . '/assets/fonts';
+		$this->mpdfConfig = [
+			'mode' => 'c',
+        	'format' => 'A4',
+			'fontDir' => [
+				$fontsFolder,
+			],
+			'fontdata' => [
+				'Courier' => [
+					'R' => 'Courier.ttf',
+					'I' => 'Courier.ttf',
+				]
+			],
+			'default_font' => 'Courier',
+			'debugfonts' => true,
+		];
 	}
 
     function general($id){
+		$this->load->library('pdf');
 		$data['products'] = $this->Mdl_AppointmentProducts->getAppointmentProducts($id);
 		$data['ap'] = $this->Mdl_Appointments->appointmentGetId($id);
 		$this->load->view('pages/files/general', $data);
@@ -32,6 +49,7 @@ Class Files extends CI_Controller
 	}
 	
 	function products($id){
+		$this->load->library('pdf');
 		$data['products'] = $this->Mdl_AppointmentProducts->getAppointmentProducts($id);
 		$data['ap'] = $this->Mdl_Appointments->appointmentGetId($id);
 		$this->load->view('pages/files/products', $data);
@@ -53,6 +71,7 @@ Class Files extends CI_Controller
 	}
 
 	function appointment($id){
+		$this->load->library('pdf');
 		$data['products'] = $this->Mdl_AppointmentProducts->getAppointmentProducts($id);
 		$data['ap'] = $this->Mdl_Appointments->appointmentGetId($id);
 		$this->load->view('pages/files/appointment', $data);
@@ -74,6 +93,7 @@ Class Files extends CI_Controller
 	}
 
 	function recipe($id){
+		$this->load->library('pdf');
 		$data['ap'] = $this->Mdl_Appointments->appointmentGetId($id);
 		$this->load->view('pages/files/recipe', $data);
 
@@ -94,6 +114,7 @@ Class Files extends CI_Controller
 	}
 	
 	function evolution($id){
+		$this->load->library('pdf');
 		$data['ap'] = $this->Mdl_Appointments->appointmentGetId($id);
 		$this->load->view('pages/files/evolution_sheet', $data);
 
@@ -114,6 +135,7 @@ Class Files extends CI_Controller
 	}
 
 	function invoice($id){
+		$this->load->library('pdf');
 		$data['products'] = $this->Mdl_Invoices->getProducts($id);
 		$data['inv'] = $this->Mdl_Invoices->get($id);
 		$this->load->view('pages/files/invoice', $data);
@@ -135,6 +157,7 @@ Class Files extends CI_Controller
 	}
 
 	function recipeOut($id){
+		$this->load->library('pdf');
 		$data['recipe'] = $this->Mdl_Recipes->get($id);
 		$this->load->view('pages/files/recipeOut', $data);
 
@@ -153,5 +176,18 @@ Class Files extends CI_Controller
 
 		// Output the generated PDF to Browser
 		$this->dompdf->stream('recetario_'.$id.'_'.date('Y_m_d').'.pdf', array('Attachment' => 0));
+	}
+
+	function historiaClinica($id_person){
+		$mpdf = new \Mpdf\Mpdf($this->mpdfConfig);
+		$mpdf->SetWatermarkImage(base_url().'/assets/img/medicina.png');
+		$mpdf->showWatermarkImage = true;
+
+		$data["historia_clinica"] = $this->Mdl_AppointmentHistory->getByPerson($id_person);
+		$data["persona"] = $this->Mdl_Persons->getPerson($id_person);
+
+		$html = $this->load->view('pages/files/historiaClinica', $data, TRUE);
+		$mpdf->WriteHTML($html);
+		$mpdf->Output(); // opens in browser
 	}
 }

@@ -171,7 +171,12 @@ function asclepio_update_link($id){
 }
 
 
-// TODO EVOLUTION
+// EVOLUTION
 function evolution_link($id){
 	return base_url().'Files/evolution/'.$id.'/'.generateToken(10);
+}
+
+// HISTORIA CLINICA
+function historia_clinica_link($id){
+	return base_url().'Files/historiaClinica/'.$id;
 }

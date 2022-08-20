@@ -113,7 +113,7 @@
 					</div> -->
 
 					<div class="form-group">
-						<label for="estatura">Acudiente</label>
+						<label for="estatura">Acudiente y parentesco</label>
 						<input type="text" class="form-control" id="acudiente" name="acudiente_persona" value="<?php echo isset($person['acudiente_persona']) ? $person['acudiente_persona'] : '' ?>"/>
 					</div>
 

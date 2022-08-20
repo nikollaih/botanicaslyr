@@ -102,7 +102,8 @@ button:focus {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0px;
-  font-weight: 400; }
+  font-weight: 600;
+  }
 
 h1 {
   font-size: 36px; }
@@ -123,7 +124,8 @@ h6 {
   font-size: 14px; }
 
 label {
-  font-weight: 400; }
+  font-weight: 400;
+  }
 
 strong, b {
   font-weight: 800 !important; }
@@ -4738,7 +4740,9 @@ figure {
   .page-header {
     padding: 15px 0px;
     margin-left: 0px;
-    display: -webkit-inline-box !important; }
+    display: -webkit-inline-box !important; 
+    width: 100%;
+  }
 
   .main-content {
     margin-left: 0px;
@@ -4907,3 +4911,39 @@ figure {
   #sync-preload div{
     margin-top: 20%;
   }
+
+  .person-container > div {
+    text-align: center;
+  }
+
+  .person-container > div i {
+    font-size: 30px;
+    color: #35a3d8;
+  }
+
+  .person-container > div label {
+    margin-bottom: 0;
+    font-weight: 600;
+  }
+
+  .table {
+    width: 100% !important;
+  }
+
+.container-historia-clinica {
+  
+background: #f3f5f7;
+  
+padding: 10px;
+  
+border-radius: 10px;
+  
+margin-bottom: 20px;
+}
+
+.float-save-button{
+  position: fixed !important;
+  bottom: 25px;
+  right: 30px;
+  z-index: 9;
+}

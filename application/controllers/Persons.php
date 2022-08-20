@@ -7,7 +7,7 @@ Class Persons extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->library('session');
-		$this->load->model(array('Mdl_Persons', 'Mdl_Appointments'));
+		$this->load->model(array('Mdl_Persons', 'Mdl_Appointments', 'Mdl_AppointmentHistory'));
 		$this->load->helper(array('url', 'auth','sync'));
 	}
 
@@ -212,6 +212,7 @@ Class Persons extends CI_Controller
 		$data['nav'] = 'patient';
 		$data['person'] = $this->Mdl_Persons->getPerson($id);
 		$data['appointments'] = $this->Mdl_Appointments->appointmentsGetPatient($id);
+		$data["historiaClinica"] = $this->Mdl_AppointmentHistory->getByPerson($id);
 		$this->load->view('pages/persons/profile', $data);
 	}
 }

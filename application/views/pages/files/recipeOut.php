@@ -69,6 +69,7 @@
                     <p style="margin: 4px;">Master Md Biol&oacute;gica U.E.M.C. Reg 1669 FUI.</p>
                     <p style="margin: 4px;">Especialista en terapias en enfermedades comunes. Registro F5654 U.E.A</p>
                     <p style="margin: 4px;">Experto universitario en Terap&eacute;utica Homeop&aacute;tica U.E.A Registro f4841</p>
+                    <h3 style="margin: 4px; color: #36a3f7;">dryeineralzate.com</h3>
                     <h3 style="margin: 4px; color: #F44336;">Tel&eacute;fono: 313 695 7462  <img width="25px" style="display:inline-block; vertical-align:middle;margin-top:7px;" src="<?php base_url() ?>assets/img/wp.jpg"></h3>
                 </td>
             </tr>
