@@ -180,7 +180,7 @@ Class Files extends CI_Controller
 
 	function historiaClinica($id_person){
 		$mpdf = new \Mpdf\Mpdf($this->mpdfConfig);
-		$mpdf->SetWatermarkImage(base_url().'/assets/img/medicina.png');
+		$mpdf->SetWatermarkImage(base_url().'/assets/img/logo_nuevo.jpg', 0.1, 'F');
 		$mpdf->showWatermarkImage = true;
 
 		$data["historia_clinica"] = $this->Mdl_AppointmentHistory->getByPerson($id_person);

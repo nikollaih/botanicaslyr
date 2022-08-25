@@ -12,7 +12,7 @@
         }
 
         @page {
-            margin: 40px;
+            margin: 20px;
 }
 
 html, body{
@@ -51,11 +51,12 @@ html, body{
         }
 
         .contenedor-informacion{
-            margin: 0px 10px 30px 10px;
+            margin: 0 0 10px 0;
         }
 
         .contenedor-informacion > p{
             margin-bottom: 0;
+            margin-top: 0;
             font-size: 10px !important;
         }
 
@@ -64,21 +65,23 @@ html, body{
             padding-bottom: 15px;
             border-bottom: 1px solid;
         }
+
+        h4 {
+            margin-bottom: 0;
+            margin-top: 0;
+        }
     </style>
 </head><body>
     <table  width="100%">
         <tbody>
             <tr>
                 <td class="text-center">
-                    <img width="190px" id="logo" src="<?php base_url() ?>assets/img/logo.jpeg">
+                    <img width="120px" id="logo" src="<?php base_url() ?>assets/img/logo_nuevo.jpg">
                 </td>
                 <td class="">
-                    <h3 style="margin: 4px; color: #1E88E5; font-size:25px;">Dr. Yeiner H. Alzate I.</h3>
-                    <p style="margin: 4px;">Geront&oacute;logo U. Quindio ReTHUS 4265.</p>
-                    <p style="margin: 4px;">Esp. M&eacute;todos Biol&oacute;gicos - Naturistas UNINI Reg CEC 14-1365.</p>
-                    <p style="margin: 4px;">Master Md Biol&oacute;gica U.E.M.C. Reg 1669 FUI.</p>
-                    <p style="margin: 4px;">Especialista en terapias en enfermedades comunes. Registro F5654 U.E.A</p>
-                    <p style="margin: 4px;">Experto universitario en Terap&eacute;utica Homeop&aacute;tica U.E.A Registro f4841</p>
+                    <h3 style="margin: 4px; color: #1E88E5; font-size:20px;">Botánicas Lucrecia y Rosa</h3>
+                    <p style="margin: 4px;">Consultorio Gerontológico NIT: 41958718-0.</p>
+                    <p style="margin: 4px;">Dr. Yeiner H. Alzate I. ReTHUS 4265.</p>
                     <h3 style="margin: 4px; color: #36a3f7;">dryeineralzate.com</h3>
                     <h3 style="margin: 4px; color: #F44336;">Tel&eacute;fono: 313 695 7462  <img width="30px" style="display:inline-block; vertical-align:middle;margin-top:7px;" src="<?php base_url() ?>assets/img/wp.jpg"></h3>
                 </td>
@@ -86,8 +89,8 @@ html, body{
         </tbody>
     </table>
     <div style="margin-top: 0;position: relative;z-index:9;font-weight:bold !important;">
-        <h4 style="text-align:center;font-size:20px;">HISTORIA CLÍNICA GERONTOLÓGICA</h4>
-        <div class="contenedor-informacion">
+        <h4 style="text-align:center;font-size:20px;margin-top: 0;margin-bottom:0">HISTORIA CLÍNICA GERONTOLÓGICA</h4>
+        <div style="margin-bottom:10px;" class="contenedor-informacion">
             <label><strong>Fecha:</strong> <?= date("Y-m-d") ?></label><br>
             <label><strong>Hora:</strong> <?= date("h:i a") ?></label><br>
             <label><strong>Identificación:</strong> <?= $persona["numero_documento"] ?></label><br>
@@ -95,39 +98,38 @@ html, body{
             <label><strong>Edad:</strong> <?= $persona["peso_persona"] ?></label><br>
         </div>
 
-        <h4 style="text-align:center;">I. ALERGIAS</h4>
         <div class="contenedor-informacion">
-            <?= $historia_clinica["alergias"] ?>
+            <strong style="font-size:16px;">I. ALERGIAS: </strong><?= $historia_clinica["alergias"] ?>
         </div>
 
-        <h4 style="text-align:center;">I. MEDICAMENTOS QUE CONSUME</h4>
         <div class="contenedor-informacion">
-            <?= $historia_clinica["medicamentos"] ?>
+            <strong style="font-size:16px;">II. MEDICAMENTOS QUE CONSUME: </strong><?= $historia_clinica["medicamentos"] ?>
         </div>
 
-        <h4 style="text-align:center;">III. MOTIVO DE CONSULTA</h4>
         <div class="contenedor-informacion">
-            <?= $historia_clinica["motivo_consulta"] ?>
+            <strong style="font-size:16px;">III. MOTIVO DE CONSULTA: </strong><?= $historia_clinica["motivo_consulta"] ?>
         </div>
 
-        <h4 style="text-align:center;">IV. SIGNOS VITALES</h4>
         <div class="contenedor-informacion">
-            <label><strong>Saturación:</strong> <?= $historia_clinica["saturacion"] ?></label><br>
-            <label><strong>Frecuencia cardiaca:</strong> <?= $historia_clinica["frecuencia_cardiaca"] ?></label><br>
-            <label><strong>Frecuencia respiratoria:</strong> <?= $historia_clinica["frecuencia_respiratoria"] ?></label><br>
-            <label><strong>Tensión arterial:</strong> <?= $historia_clinica["tension_arterial"] ?></label><br>
-            <label><strong>Temperatura:</strong> <?= $historia_clinica["temperatura"] ?></label><br>
+            <strong style="font-size:16px;">IV. FACTORES DE RIESGO Y ANTECEDENTES: </strong><?= $historia_clinica["factores_riesgo"] ?>
+        </div>
+
+        <div class="contenedor-informacion">
+        <strong style="font-size:16px;">V. I.D.D.: </strong><?= $historia_clinica["idd"] ?>
+        </div>
+
+        <div class="contenedor-informacion">
+            <strong style="font-size:16px;">VI. SIGNOS VITALES: </strong>
+            <label><strong>Saturación:</strong> <?= $historia_clinica["saturacion"].', ' ?></label>
+            <label><strong>Frecuencia cardiaca:</strong> <?= $historia_clinica["frecuencia_cardiaca"].', ' ?></label>
+            <label><strong>Frecuencia respiratoria:</strong> <?= $historia_clinica["frecuencia_respiratoria"].', ' ?></label>
+            <label><strong>Tensión arterial:</strong> <?= $historia_clinica["tension_arterial"].', ' ?></label>
+            <label><strong>Temperatura:</strong> <?= $historia_clinica["temperatura"].', ' ?></label>
             <label><strong>Dolor EVA:</strong> <?= $historia_clinica["dolor_eva"] ?></label><br>
         </div>
 
-        <h4 style="text-align:center;">V. I.D.D.</h4>
         <div class="contenedor-informacion">
-            <?= $historia_clinica["idd"] ?>
-        </div>
-
-        <h4 style="text-align:center;">VI. ANÁLISIS, PLAN DE MANEJO Y RECOMENDACIONES GENERALES</h4>
-        <div class="contenedor-informacion">
-            <?= $historia_clinica["analisis_manejo_recomendaciones"] ?>
+        <strong style="font-size:16px;">VII. ANÁLISIS, PLAN DE MANEJO Y RECOMENDACIONES GENERALES: </strong><?= $historia_clinica["analisis_manejo_recomendaciones"] ?>
         </div>
     </div>
    </body></html>
