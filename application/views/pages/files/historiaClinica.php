@@ -115,17 +115,17 @@ html, body{
         </div>
 
         <div class="contenedor-informacion">
-        <strong style="font-size:16px;">V. I.D.D.: </strong><?= $historia_clinica["idd"] ?>
-        </div>
-
-        <div class="contenedor-informacion">
-            <strong style="font-size:16px;">VI. SIGNOS VITALES: </strong>
+            <strong style="font-size:16px;">V. SIGNOS VITALES: </strong>
             <label><strong>Saturación:</strong> <?= $historia_clinica["saturacion"].', ' ?></label>
             <label><strong>Frecuencia cardiaca:</strong> <?= $historia_clinica["frecuencia_cardiaca"].', ' ?></label>
             <label><strong>Frecuencia respiratoria:</strong> <?= $historia_clinica["frecuencia_respiratoria"].', ' ?></label>
             <label><strong>Tensión arterial:</strong> <?= $historia_clinica["tension_arterial"].', ' ?></label>
             <label><strong>Temperatura:</strong> <?= $historia_clinica["temperatura"].', ' ?></label>
             <label><strong>Dolor EVA:</strong> <?= $historia_clinica["dolor_eva"] ?></label><br>
+        </div>
+
+        <div class="contenedor-informacion">
+        <strong style="font-size:16px;">VI. I.D.D.: </strong><?= $historia_clinica["idd"] ?>
         </div>
 
         <div class="contenedor-informacion">
