@@ -120,6 +120,11 @@ $time_format = "H:i a";
                         <?= $historiaClinica["motivo_consulta"] ?>
                     </div>
 
+                    <h5>Factores de riesgo y antecedentes</h5>
+                    <div class="container-historia-clinica">
+                        <?= $historiaClinica["factores_riesgo"] ?>
+                    </div>
+
                     <h5>signos vitales</h5>
                     <div class="container-historia-clinica">
                         <label style="margin-bottom:0;"> <strong>Saturación: </strong> <?= $historiaClinica["saturacion"] ?></label><br>

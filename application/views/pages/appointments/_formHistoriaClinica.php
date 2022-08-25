@@ -82,6 +82,19 @@
 
     <div class="col-md-12">
         <div class="form-group">
+            <label for=""><strong>Factores de riesgo y antecedentes</strong></label>
+            <textarea class="form-control summernote" name="hc[factores_riesgo]" id="" cols="30" rows="10">
+                <?php
+                    if (isset($historia_clinica['factores_riesgo'])) {
+                        echo $historia_clinica['factores_riesgo'];
+                    }
+                ?>
+            </textarea>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="form-group">
             <label for=""><strong>I.D.D.</strong></label>
             <textarea class="form-control summernote" name="hc[idd]" id="" cols="30" rows="10">
                 <?php
