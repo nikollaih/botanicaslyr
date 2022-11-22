@@ -106,43 +106,43 @@ $time_format = "H:i a";
                 <div class="card-body">
                     <h5>Alergias</h5>
                     <div class="container-historia-clinica">
-                        <?= $historiaClinica["alergias"] ?>
+                        <?= (is_array($historiaClinica)) ? $historiaClinica["alergias"] : "" ?>
                     </div>
 
                     <h5>Medicamentos que consume</h5>
                     <div class="container-historia-clinica">
-                        <?= $historiaClinica["medicamentos"] ?>
+                        <?= (is_array($historiaClinica)) ? $historiaClinica["medicamentos"] : "" ?>
                     </div>
 
 
                     <h5>Motivo de consulta</h5>
                     <div class="container-historia-clinica">
-                        <?= $historiaClinica["motivo_consulta"] ?>
+                        <?= (is_array($historiaClinica)) ? $historiaClinica["motivo_consulta"] : "" ?>
                     </div>
 
                     <h5>Factores de riesgo y antecedentes</h5>
                     <div class="container-historia-clinica">
-                        <?= $historiaClinica["factores_riesgo"] ?>
+                        <?= (is_array($historiaClinica)) ? $historiaClinica["factores_riesgo"] : "" ?>
                     </div>
 
                     <h5>signos vitales</h5>
                     <div class="container-historia-clinica">
-                        <label style="margin-bottom:0;"> <strong>Saturación: </strong> <?= $historiaClinica["saturacion"] ?></label><br>
-                        <label style="margin-bottom:0;"> <strong>Frecuencia Cardiaca: </strong> <?= $historiaClinica["frecuencia_cardiaca"] ?></label><br>
-                        <label style="margin-bottom:0;"> <strong>Frecuencia Respiratoria: </strong> <?= $historiaClinica["frecuencia_respiratoria"] ?></label><br>
-                        <label style="margin-bottom:0;"> <strong>Tensión Arterial: </strong> <?= $historiaClinica["tension_arterial"] ?></label><br>
-                        <label style="margin-bottom:0;"> <strong>Temperatura: </strong> <?= $historiaClinica["temperatura"] ?></label><br>
-                        <label style="margin-bottom:0;"> <strong>Dolor EVA: </strong> <?= $historiaClinica["dolor_eva"] ?></label><br>
+                        <label style="margin-bottom:0;"> <strong>Saturación: </strong> <?= (is_array($historiaClinica)) ? $historiaClinica["saturacion"] : "" ?></label><br>
+                        <label style="margin-bottom:0;"> <strong>Frecuencia Cardiaca: </strong> <?= (is_array($historiaClinica)) ? $historiaClinica["frecuencia_cardiaca"] : "" ?></label><br>
+                        <label style="margin-bottom:0;"> <strong>Frecuencia Respiratoria: </strong> <?= (is_array($historiaClinica)) ? $historiaClinica["frecuencia_respiratoria"] : "" ?></label><br>
+                        <label style="margin-bottom:0;"> <strong>Tensión Arterial: </strong> <?= (is_array($historiaClinica)) ? $historiaClinica["tension_arterial"] : "" ?></label><br>
+                        <label style="margin-bottom:0;"> <strong>Temperatura: </strong> <?= (is_array($historiaClinica)) ? $historiaClinica["temperatura"] : "" ?></label><br>
+                        <label style="margin-bottom:0;"> <strong>Dolor EVA: </strong> <?= (is_array($historiaClinica)) ? $historiaClinica["dolor_eva"] : "" ?></label><br>
                     </div>
 
                     <h5>I.D.D.</h5>
                     <div class="container-historia-clinica">
-                        <?= $historiaClinica["idd"] ?>
+                        <?= (is_array($historiaClinica)) ? $historiaClinica["idd"] : "" ?>
                     </div>
 
                     <h5>Análisis, plan de manejo y recomendaciones generales</h5>
                     <div class="container-historia-clinica">
-                        <?= $historiaClinica["analisis_manejo_recomendaciones"] ?>
+                        <?= (is_array($historiaClinica)) ? $historiaClinica["analisis_manejo_recomendaciones"] : "" ?>
                     </div>
                 </div>
             </div>
