@@ -66,8 +66,7 @@ html, body{
                     <p style="margin: 4px;">Geront&oacute;logo U. Quindio ReTHUS 4265.</p>
                     <p style="margin: 4px;">Esp. M&eacute;todos Biol&oacute;gicos - Naturistas UNINI Reg CEC 14-1365.</p>
                     <p style="margin: 4px;">Master Md Biol&oacute;gica U.E.M.C. Reg 1669 FUI.</p>
-                    <p style="margin: 4px;">M&aacute;ster en el tratamiento del dolor en la pr&aacute;ctica cl&iacute;nica; Universidad de salamanca, Reg. 22/633.</p>
-                    <p style="margin: 4px;">Especialista en terapias en enfermedades comunes. Registro F5654 U.E.A</p>
+                    <p style="margin: 4px;">M&aacute;ster en el Tratamiento del Dolor en la Pr&aacute;ctica Cl&iacute;nica; Universidad de Salamanca, Reg. 22/633.</p>                    <p style="margin: 4px;">Especialista en terapias en enfermedades comunes. Registro F5654 U.E.A</p>
                     <p style="margin: 4px;">Experto universitario en Terap&eacute;utica Homeop&aacute;tica U.E.A Registro f4841</p>
                     <h3 style="margin: 4px; color: #36a3f7;">dryeineralzate.com</h3>
                     <h3 style="margin: 4px; color: #F44336;">Tel&eacute;fono: 313 695 7462  <img width="40px" style="display:inline-block; vertical-align:middle;margin-top:7px;" src="<?php base_url() ?>assets/img/wp.jpg"></h3>

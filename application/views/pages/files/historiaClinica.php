@@ -81,7 +81,6 @@ html, body{
                 <td class="">
                     <h3 style="margin: 4px; color: #1E88E5; font-size:20px;">Botánicas Lucrecia y Rosa</h3>
                     <p style="margin: 4px;">Consultorio Gerontológico NIT: 41958718-0.</p>
-                    <p style="margin: 4px;">M&aacute;ster en el tratamiento del dolor en la pr&aacute;ctica cl&iacute;nica; Universidad de salamanca, Reg. 22/633.</p>
                     <p style="margin: 4px;">Dr. Yeiner H. Alzate I. ReTHUS 4265.</p>
                     <h3 style="margin: 4px; color: #36a3f7;">dryeineralzate.com</h3>
                     <h3 style="margin: 4px; color: #F44336;">Tel&eacute;fono: 313 695 7462  <img width="30px" style="display:inline-block; vertical-align:middle;margin-top:7px;" src="<?php base_url() ?>assets/img/wp.jpg"></h3>
