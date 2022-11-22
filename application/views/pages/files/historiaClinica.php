@@ -81,6 +81,7 @@ html, body{
                 <td class="">
                     <h3 style="margin: 4px; color: #1E88E5; font-size:20px;">Botánicas Lucrecia y Rosa</h3>
                     <p style="margin: 4px;">Consultorio Gerontológico NIT: 41958718-0.</p>
+                    <p style="margin: 4px;">M&aacute;ster en el tratamiento del dolor en la pr&aacute;ctica cl&iacute;nica; Universidad de salamanca, Reg. 22/633.</p>
                     <p style="margin: 4px;">Dr. Yeiner H. Alzate I. ReTHUS 4265.</p>
                     <h3 style="margin: 4px; color: #36a3f7;">dryeineralzate.com</h3>
                     <h3 style="margin: 4px; color: #F44336;">Tel&eacute;fono: 313 695 7462  <img width="30px" style="display:inline-block; vertical-align:middle;margin-top:7px;" src="<?php base_url() ?>assets/img/wp.jpg"></h3>
@@ -99,37 +100,37 @@ html, body{
         </div>
 
         <div class="contenedor-informacion">
-            <strong style="font-size:16px;">I. ALERGIAS: </strong><?= $historia_clinica["alergias"] ?>
+            <strong style="font-size:16px;">I. ALERGIAS: </strong><?= (is_array($historia_clinica)) ? $historia_clinica["alergias"] : "" ?>
         </div>
 
         <div class="contenedor-informacion">
-            <strong style="font-size:16px;">II. MEDICAMENTOS QUE CONSUME: </strong><?= $historia_clinica["medicamentos"] ?>
+            <strong style="font-size:16px;">II. MEDICAMENTOS QUE CONSUME: </strong><?= (is_array($historia_clinica)) ? $historia_clinica["medicamentos"] : "" ?>
         </div>
 
         <div class="contenedor-informacion">
             <strong style="font-size:16px;">III. SIGNOS VITALES: </strong>
-            <label><strong>Saturación:</strong> <?= $historia_clinica["saturacion"].', ' ?></label>
-            <label><strong>Frecuencia cardiaca:</strong> <?= $historia_clinica["frecuencia_cardiaca"].', ' ?></label>
-            <label><strong>Frecuencia respiratoria:</strong> <?= $historia_clinica["frecuencia_respiratoria"].', ' ?></label>
-            <label><strong>Tensión arterial:</strong> <?= $historia_clinica["tension_arterial"].', ' ?></label>
-            <label><strong>Temperatura:</strong> <?= $historia_clinica["temperatura"].', ' ?></label>
-            <label><strong>Dolor EVA:</strong> <?= $historia_clinica["dolor_eva"] ?></label><br>
+            <label><strong>Saturación:</strong> <?= (is_array($historia_clinica)) ? $historia_clinica["saturacion"]. ', ' : "" ?></label>
+            <label><strong>Frecuencia cardiaca:</strong> <?= (is_array($historia_clinica)) ? $historia_clinica["frecuencia_cardiaca"]. ', ' : "" ?></label>
+            <label><strong>Frecuencia respiratoria:</strong> <?= (is_array($historia_clinica)) ? $historia_clinica["frecuencia_respiratoria"]. ', ' : "" ?></label>
+            <label><strong>Tensión arterial:</strong> <?= (is_array($historia_clinica)) ? $historia_clinica["tension_arterial"]. ', ' : "" ?></label>
+            <label><strong>Temperatura:</strong> <?= (is_array($historia_clinica)) ? $historia_clinica["temperatura"]. ', ' : "" ?></label>
+            <label><strong>Dolor EVA:</strong> <?= (is_array($historia_clinica)) ? $historia_clinica["dolor_eva"] : "" ?></label><br>
         </div>
 
         <div class="contenedor-informacion">
-            <strong style="font-size:16px;">IV. FACTORES DE RIESGO Y ANTECEDENTES: </strong><?= $historia_clinica["factores_riesgo"] ?>
+            <strong style="font-size:16px;">IV. FACTORES DE RIESGO Y ANTECEDENTES: </strong><?= (is_array($historia_clinica)) ? $historia_clinica["factores_riesgo"] : "" ?>
         </div>
 
         <div class="contenedor-informacion">
-            <strong style="font-size:16px;">V. MOTIVO DE CONSULTA: </strong><?= $historia_clinica["motivo_consulta"] ?>
+            <strong style="font-size:16px;">V. MOTIVO DE CONSULTA: </strong><?= (is_array($historia_clinica)) ? $historia_clinica["motico_consulta"] : "" ?>
         </div>
 
         <div class="contenedor-informacion">
-        <strong style="font-size:16px;">VI. I.D.D.: </strong><?= $historia_clinica["idd"] ?>
+        <strong style="font-size:16px;">VI. I.D.D.: </strong><?= (is_array($historia_clinica)) ? $historia_clinica["idd"] : "" ?>
         </div>
 
         <div class="contenedor-informacion">
-        <strong style="font-size:16px;">VII. ANÁLISIS, PLAN DE MANEJO Y RECOMENDACIONES GENERALES: </strong><?= $historia_clinica["analisis_manejo_recomendaciones"] ?>
+        <strong style="font-size:16px;">VII. ANÁLISIS, PLAN DE MANEJO Y RECOMENDACIONES GENERALES: </strong><?= (is_array($historia_clinica)) ? $historia_clinica["analisis_manejo_recomendaciones"] : "" ?>
         </div>
     </div>
    </body></html>
